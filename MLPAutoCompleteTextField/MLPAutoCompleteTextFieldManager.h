@@ -77,6 +77,8 @@
 
 - (id)initWithTextField:(UITextField*)textField;
 
+- (void)styleAutoCompleteTableForBorderStyle:(UITextBorderStyle)borderStyle;
+
 @end
 
 
