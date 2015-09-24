@@ -15,17 +15,17 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #import <Foundation/Foundation.h>
 #import "MLPAutoCompletionObject.h"
 
-@class MLPAutoCompleteTextField;
+@class MLPAutoCompleteTextFieldManager;
 @protocol MLPAutoCompleteTextFieldDelegate <NSObject>
 
 @optional
-- (BOOL)autoCompleteTextField:(MLPAutoCompleteTextField *)textField
+- (BOOL)autoCompleteTextField:(MLPAutoCompleteTextFieldManager *)manager
     shouldStyleAutoCompleteTableView:(UITableView *)autoCompleteTableView
                       forBorderStyle:(UITextBorderStyle)borderStyle;
 
 /*IndexPath corresponds to the order of strings within the autocomplete table,
  not the original data source.*/
-- (BOOL)autoCompleteTextField:(MLPAutoCompleteTextField *)textField
+- (BOOL)autoCompleteTextField:(MLPAutoCompleteTextFieldManager *)manager
           shouldConfigureCell:(UITableViewCell *)cell
        withAutoCompleteString:(NSString *)autocompleteString
          withAttributedString:(NSAttributedString *)boldedString
@@ -37,15 +37,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 not the original data source.
  autoCompleteObject may be nil if the selectedString had no object associated with it.
  */
-- (void)autoCompleteTextField:(MLPAutoCompleteTextField *)textField
+- (void)autoCompleteTextField:(MLPAutoCompleteTextFieldManager *)manager
   didSelectAutoCompleteString:(NSString *)selectedString
        withAutoCompleteObject:(id<MLPAutoCompletionObject>)selectedObject
             forRowAtIndexPath:(NSIndexPath *)indexPath;
 
-- (void)autoCompleteTextField:(MLPAutoCompleteTextField *)textField
+- (void)autoCompleteTextField:(MLPAutoCompleteTextFieldManager *)manager
 willShowAutoCompleteTableView:(UITableView *)autoCompleteTableView;
 
-- (void)autoCompleteTextField:(MLPAutoCompleteTextField *)textField
+- (void)autoCompleteTextField:(MLPAutoCompleteTextFieldManager *)manager
  didChangeNumberOfSuggestions:(NSInteger)numberOfSuggestions;
 
 @end

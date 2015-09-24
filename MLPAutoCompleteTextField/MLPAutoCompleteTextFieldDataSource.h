@@ -14,7 +14,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 #import <Foundation/Foundation.h>
 
-@class MLPAutoCompleteTextField;
+@class MLPAutoCompleteTextFieldManager;
 @protocol MLPAutoCompleteTextFieldDataSource <NSObject>
 
 
@@ -27,7 +27,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
  an NSArray of strings or objects implementing the MLPAutoCompletionObject protocol that 
  could be used as possible completions for the given string in textField.
  */
-- (void)autoCompleteTextField:(MLPAutoCompleteTextField *)textField
+- (void)autoCompleteTextField:(MLPAutoCompleteTextFieldManager *)manager
       possibleCompletionsForString:(NSString *)string
                  completionHandler:(void(^)(NSArray *suggestions))handler;
 
@@ -38,7 +38,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
  that could be used as possible completions for the given string in textField.
 This method will be called asynchronously, so an immediate return is not necessary.
  */
-- (NSArray *)autoCompleteTextField:(MLPAutoCompleteTextField *)textField
+- (NSArray *)autoCompleteTextField:(MLPAutoCompleteTextFieldManager *)manager
       possibleCompletionsForString:(NSString *)string;
 
 

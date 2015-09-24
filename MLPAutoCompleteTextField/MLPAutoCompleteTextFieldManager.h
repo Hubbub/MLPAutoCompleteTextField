@@ -1,5 +1,5 @@
 /*
- //  MLPAutoCompleteTextField.h
+ //  MLPAutoCompleteTextFieldManager.h
  //
  //
  //  Created by Eddy Borja on 12/29/12.
@@ -26,7 +26,7 @@
 @end
 
 
-@interface MLPAutoCompleteTextField : UITextField <UITableViewDataSource, UITableViewDelegate, MLPAutoCompleteSortOperationDelegate, MLPAutoCompleteFetchOperationDelegate>
+@interface MLPAutoCompleteTextFieldManager : NSObject <UITableViewDataSource, UITableViewDelegate, MLPAutoCompleteSortOperationDelegate, MLPAutoCompleteFetchOperationDelegate>
 
 + (NSString *) accessibilityLabelForIndexPath:(NSIndexPath *)indexPath;
 
@@ -66,6 +66,7 @@
 @property (nonatomic, strong) UIColor *autoCompleteTableBackgroundColor;
 @property (strong) UIColor *autoCompleteTableCellBackgroundColor;
 @property (strong) UIColor *autoCompleteTableCellTextColor;
+@property (nonatomic, strong) UITextField *textField;
 
 
 - (void)registerAutoCompleteCellNib:(UINib *)nib forCellReuseIdentifier:(NSString *)reuseIdentifier;
@@ -73,6 +74,9 @@
 - (void)registerAutoCompleteCellClass:(Class)cellClass forCellReuseIdentifier:(NSString *)reuseIdentifier;
 
 - (void)reloadData; //it will ask DataSource for data again
+
+- (id)initWithTextField:(UITextField*)textField;
+
 @end
 
 
