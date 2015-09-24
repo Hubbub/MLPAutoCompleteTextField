@@ -17,6 +17,7 @@
 #import "NSString+Levenshtein.h"
 #import <QuartzCore/QuartzCore.h>
 
+#define BROKEN
 
 static NSString *kSortInputStringKey = @"sortInputString";
 static NSString *kSortEditDistancesKey = @"editDistances";
