@@ -35,7 +35,6 @@
     UIView* hit = [super hitTest:point withEvent:event];
     if (hit != nil) {
         // Give priority to the search bar itself
-        NSLog(@"Super hit");
         return hit;
     }
     
