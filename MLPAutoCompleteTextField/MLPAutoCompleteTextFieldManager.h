@@ -79,6 +79,8 @@
 
 - (void)styleAutoCompleteTableForBorderStyle:(UITextBorderStyle)borderStyle;
 
+- (BOOL)resignFirstResponder;
+
 @end
 
 
